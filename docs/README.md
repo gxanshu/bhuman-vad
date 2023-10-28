@@ -1,4 +1,4 @@
-# Voice Activity Detection for Javascript
+# BHuman's Voice Activity Detection for Javascript
 
 folk of [@ricky0123](https://github.com/ricky0123/vad)
 
@@ -12,12 +12,34 @@ This package aims to provide an accurate, user-friendly voice activity detector 
 
 The only problem that this folk solve is documentation. `@ricky0123/vad` does not have proper docs to implement things.
 
-Documentation for bundling the voice activity detector for the browser or using it in node or React projects can be found on [vad.ricky0123.com](https://www.vad.ricky0123.com).
+Real documentation for bundling the voice activity detector for the browser or using it in node or React projects can be found on [vad.ricky0123.com](https://www.vad.ricky0123.com).
 
 this package provide's you extended docs that help you to integrate VAD in any JS framework.
 
-for extend docs please visit: 
+highly recommanded to visit there real docs first and read more from BHuman's documentation
 
+### Quick Start
+
+To use the VAD via a script tag in the browser, include the following script tags:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bhuman-vad-web@0.0.1/dist/bundle.min.js"></script>
+<script>
+  async function main() {
+    const myvad = await vad.MicVAD.new({
+      onSpeechStart: () => {
+        console.log("Speech start detected")
+      },
+      onSpeechEnd: (audio) => {
+        // do something with `audio` (Float32Array of audio samples at sample rate 16000)...
+      }
+    })
+    myvad.start()
+  }
+  main()
+</script>
+```
 
 ## References
 
